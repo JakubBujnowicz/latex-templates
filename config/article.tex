@@ -1,0 +1,86 @@
+% ==============================================================================
+% ============================       PACKAGES       ============================
+% ==============================================================================
+
+% Encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % Fixes inequality signs and accents
+
+% Font
+\usepackage[scaled]{helvet}
+\renewcommand*\familydefault{\sfdefault} 
+
+% Language
+\input{config/languages/\usedlanguage}
+
+% Size of the page
+\usepackage[a4paper,
+            left=3cm, right=2.5cm,
+            top=2.5cm, bottom=2.5cm]{geometry}
+
+% Math symbols and environments
+\usepackage{amssymb} % Symbols
+\usepackage{amsmath} % Equations and more
+\usepackage{amsfonts} % Fonts
+\usepackage{amsthm} % Theorems
+\usepackage{mathtools} % Extension of amsmath
+\usepackage{bbm} % Bolded font for numerics
+
+% Better control of custom commands and optional arguments
+\usepackage{xargs}
+\usepackage{xspace} % Allows for using fixed text commands without {}
+
+% BiBLaTeX
+\usepackage[natbib=true,
+            style=numeric,
+            abbreviate=true,
+            doi=false,
+            isbn=false,
+            url=false,
+            maxbibnames=100,
+            maxcitenames=2,
+            language=\biblanguage,
+            sortlocale=\bibsortlocale,
+            backend=biber]{biblatex}
+
+\ifdefstring{\usedlanguage}{english}{
+	% Add proper quotes for english bibliography
+	\usepackage{csquotes}
+}{
+	% Removes quotes from the title
+	\DeclareFieldFormat[article, inbook]{title}{#1}
+	\DeclareFieldFormat[article, inbook]{title}{#1}	
+}
+
+% Tables
+\usepackage{booktabs} % Prettier spacing in tables
+\usepackage{multirow} % Multirows
+
+% Others
+\usepackage{enumitem} % Custom enumeration
+\usepackage{graphicx} % Extended commands for inserting figures
+\usepackage[colorinlistoftodos]{todonotes} % Easy 'to do' notes
+\usepackage[hidelinks]{hyperref} % Turns references into links
+\usepackage[open]{bookmark} % Bookmarks
+\usepackage{xcolor} % Names of colors
+\usepackage{float} % Advanced settings of float placements
+
+
+% ==============================================================================
+% =====================       APPLYING CONFIGURATION       =====================
+% ==============================================================================
+% Set title, author and date
+\author{\docauthor}
+\title{\doctitle}
+\date{\docdate}
+
+% Set equation numbering
+\numberwithin{equation}{\eqnumwithin}
+
+% Adding the bibliography file
+\addbibresource{\bibfile}
+
+% Hiding todos
+\iftoggle{hidetodos}{
+	\presetkeys{todonotes}{disable}{}
+}{}

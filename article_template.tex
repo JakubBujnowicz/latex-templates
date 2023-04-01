@@ -1,0 +1,60 @@
+% ==============================================================================
+% =========================       CONFIGURATION       ==========================
+% ==============================================================================
+\documentclass[12pt,a4paper]{article}
+
+% Set definitions of variables (e.g. title, author)
+\input{config/definitions.tex}
+
+% General configuration of the document (e.g. language)
+\input{config/configuration.tex}
+
+% Packages and options of these packages
+\input{config/article.tex}
+
+% User commands and environments
+\input{config/commands.tex}
+\input{config/environments.tex}
+
+\usepackage[language=\usedlanguage]{lipsum}
+
+% ==============================================================================
+% ============================       DOCUMENT       ============================
+% ==============================================================================
+\begin{document}
+
+% Title page -------------------------------------------------------------------
+\hypersetup{pageanchor=false} % No hyperlink anchor for the title-page
+\maketitle
+% \input{sections/titlepage.tex}
+
+
+% Table of contents ------------------------------------------------------------
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+% Start page numbering after ToC
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true} % Activate anchors for page hyperlinks
+
+
+% List of TODOs ----------------------------------------------------------------
+\iftoggle{showtodolist}{
+	\listoftodos
+	\newpage
+}{}
+
+
+% Sections ---------------------------------------------------------------------
+% Insert your sections and text here
+
+% Bibliography  ----------------------------------------------------------------
+\iftoggle{addbibliography}{
+	\clearpage
+	
+	\printbibliography[heading=bibintoc]
+}{}
+
+
+% Document end -----------------------------------------------------------------
+\end{document}

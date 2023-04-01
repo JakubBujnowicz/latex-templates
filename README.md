@@ -1,2 +1,2 @@
 # latex-templates
-LaTeX templates prepared for different kinds of documents
+LaTeX templates prepared for different kinds of documents.

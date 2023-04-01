@@ -1,0 +1,164 @@
+% ==============================================================================
+% ==============================       SETS       ==============================
+% ==============================================================================
+% Requires amsfonts package
+\newcommand{\setN}{\mathbb{N}}
+\newcommand{\setZ}{\mathbb{Z}}
+\newcommand{\setQ}{\mathbb{Q}}
+\newcommand{\setR}{\mathbb{R}}
+\newcommand{\setC}{\mathbb{C}}
+
+
+% ==============================================================================
+% ===========================       FUNCTIONS       ============================
+% ==============================================================================
+% Generic function
+\newcommand{\fnctn}[2][f]{ #1 \! \left( #2 \right) }
+
+% Expected value
+\newcommand{\Ex}[1]{ \operatorname{\mathbb{E}} \! \left[ #1 \right] }
+\newcommand{\ExAbs}[1]{ \operatorname{\mathbb{E}} \! \left\vert #1 \right\vert }
+\newcommand{\ExCond}[2]{ \Ex{#1 \vert #2} }
+
+% Variance
+\newcommand{\Var}[1]{ \operatorname{Var} \! \left[ #1 \right] }
+
+% Covariance & correlation
+\newcommand{\Cov}[1]{ \operatorname{Cov} \! \left( #1 \right) }
+\newcommand{\Cor}[1]{ \operatorname{Cor} \! \left( #1 \right) }
+
+% Characteristic & moment generating functions
+\newcommand{\charfun}[2][X]{ \varphi_{#1} \! \left( #2 \right) }
+\newcommand{\charexpfun}[2][X]{ \psi_{#1} \! \left( #2 \right) }
+\newcommand{\mgf}[2][X]{ M_{#1} \! \left( #2 \right) }
+
+% Family of sets, functions
+\newcommand{\family}[2]{ \left( #1 \right)_{#2} }
+
+% Probability
+\newcommand{\prob}[1]{ \operatorname{\probSmb} \! \left( #1 \right) }
+
+% Norm and absolute value
+\newcommand{\norm}[1]{ \left\lVert #1 \right\rVert }
+\newcommand{\abs}[1]{ \left\vert #1 \right\vert }
+
+% Logarithms
+\newcommand{\Log}[2][]{ \operatorname{log}_{#1} \! \left( #2 \right) }
+\newcommand{\Ln}[1]{ \operatorname{ln} \! \left( #1 \right) }
+
+% Indicator function
+\newcommand{\indicator}[2][x]{ \mathbbm{1}_{#2} \! \left( #1 \right) }
+
+% Exponent function
+\newcommand{\Exp}[1]{ \operatorname{exp} \! \left( #1 \right) }
+
+% Real and imaginary part
+\renewcommand{\Re}[1]{ \operatorname{Re} \! \left( #1 \right) }
+\renewcommand{\Im}[1]{ \operatorname{Im} \! \left( #1 \right) }
+
+% Interior and closure
+\newcommand{\interior}[1]{ \operatorname{int} \! \left( #1 \right) }
+\newcommand{\closure}[1]{ \overline{#1} }
+
+% Gamma functions
+\newcommand{\fGamma}[1]{ \operatorname{\Gamma} \! \left( #1 \right) }
+\newcommand{\fUGamma}[2]{ \operatorname{\Gamma} \! \left( #1,#2 \right) }
+\newcommand{\fLGamma}[2]{ \operatorname{\gamma} \! \left( #1,#2 \right) }
+
+
+% ==============================================================================
+% ======================       STRUCTURES AND OTHER       ======================
+% ==============================================================================
+% Probability space
+\newcommand{\measureSpace}{ \left( \Omega, \sigmaAlgebra \right) }
+\newcommand{\probSpace}{ \left( \Omega, \sigmaAlgebra, \probSmb \right) }
+\newcommand{\filtProbSpace}{ \left( \Omega, \sigmaAlgebra, \mathbb{F}, \probSmb \right) }
+
+% Big for all
+\newcommand{\bigforall}{ \mathop{\mbox{\Large $\mathsurround=0pt\forall$}} }
+\newcommand{\bigexists}{ \mathop{\mbox{\Large $\mathsurround=0pt\exists$}} }
+
+% Integrals
+\newcommand{\evalAt}[3]{ \! \left. #1 \right\vert_{#2}^{#3} }
+\newcommandx{\integral}[2][1={}, 2={}]{ \int\limits_{#1}^{#2} }
+
+% Create a set
+\newcommand{\set}[1]{ \left\lbrace #1 \right\rbrace}
+\newcommand{\setCond}[2]{ \left\lbrace #1 : #2 \right\rbrace}
+
+% Radon-Nikodym derivative
+\newcommand{\RNDerivative}[2]{ \dfrac{d #1}{d #2}}
+
+% Borel sets
+\newcommand{\borelSet}[1]{ \borelSmb \! \left( #1 \right) \! }
+
+% Stochastic convergence
+\newcommand{\stochConv}[1][\probSmb]{ \xrightarrow{#1} }
+
+% Function definition
+\newcommand{\fundef}[3]{ #1 \colon #2 \to #3 }
+
+
+% ==============================================================================
+% =========================       DISTRIBUTIONS       ==========================
+% ==============================================================================
+% Probability distributions
+\newcommandx{\distNorm}[2][1=\mu, 2=\sigma^2]{ \mathcal{N} \! \left( #1, #2 \right) }
+\newcommandx{\distPois}[1][1=\lambda]{ \operatorname{Pois} \! \left( #1 \right) }
+\newcommandx{\distGamma}[2][1=\alpha, 2=\beta]{ \Gamma \! \left( #1, #2 \right) }
+\newcommandx{\distCompPois}[2][1=\lambda, 2=F]{ \operatorname{CP} \! \left( #1, #2 \right) }
+
+
+% ==============================================================================
+% =========================       MISCELLANEOUS       ==========================
+% ==============================================================================
+% Handles input tables from R xtable package (different encoding)
+% \newcommand{\xtable}[1]{\inputencoding{latin1}\input{#1}}
+
+% To mark text as a comment
+\newcommand{\comment}[1]{ \todo[inline, backgroundcolor=blue!20]{#1} }
+
+% To mark text as important/TODO
+\newcommand{\TODO}[1]{ \todo[inline]{#1} }
+
+
+% ==============================================================================
+% ============================       COLOURS       =============================
+% ==============================================================================
+\definecolor{skyblue}{HTML}{6CA6CD}
+\definecolor{salmon}{HTML}{F05D62}
+
+% For Beamer presentation
+\definecolor{tugreen}{rgb}{0.5686275,0.6745098,0.4196078}
+\definecolor{tulightgreen}{rgb}{ 0.7098039,0.7921569,0.5098039}
+\definecolor{tugrey}{rgb}{0.6117647,0.6156863,0.6235294}
+\definecolor{tured}{rgb}{0.8980392,0.2039216,0.09411765}
+\definecolor{tublue}{rgb}{0,0.3,1}
+\definecolor{tulightgrey}{rgb}{0.99,0.99,0.99}
+\definecolor{ecs100}{RGB}{93,147,189}
+
+\newcommand{\Blue}{\color{tublue}}
+\newcommand{\Red}{\color{tured}}
+\newcommand{\tcrb}{\color{tublue}}
+\newcommand{\tcrg}{\color{tugreen}}
+\newcommand{\tcrr}{\color{tured}}
+\newcommand{\tcro}{\color{orange}}
+\newcommand{\tcrm}{\color{magenta}}
+\newcommand{\tcrlg}{\color{tulightgreen}}
+\newcommand{\tcrgr}{\color{tugrey}}
+
+
+% ==============================================================================
+% ===================       FIXED STRINGS AND SYMBOLS       ====================
+% ==============================================================================
+% Symbols
+\newcommand{\probSmb}{ \mathbb{P} }
+% For sigma-algebras
+\newcommand{\sigmaAlgebra}{ \mathcal{F} }
+% Borel
+\newcommand{\borelSmb}{ \mathcal{B} }
+
+
+% ==============================================================================
+% ==============================       END       ===============================
+% ==============================================================================

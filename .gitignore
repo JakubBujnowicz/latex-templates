@@ -1,3 +1,7 @@
+## Own rules
+*.directory
+*_template.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

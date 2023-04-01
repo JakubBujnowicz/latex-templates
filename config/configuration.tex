@@ -1,0 +1,28 @@
+% Programming and conditionals, necessary for some configurations
+\usepackage{etoolbox}
+
+% Set language, choose from available in config/languages
+\newcommand{\usedlanguage}{english}
+
+% Set equation numbers per section
+\newcommand{\eqnumwithin}{section}
+
+% Line spacing
+\linespread{1.3}
+
+% Bibliography file
+\newcommand{\bibfile}{bibliography/bibliography.bib}
+
+
+% On/off options ---------------------------------------------------------------
+% Show TODO list
+\newtoggle{showtodolist}
+\settoggle{showtodolist}{false}
+
+% Add bibliography
+\newtoggle{addbibliography}
+\settoggle{addbibliography}{false}
+
+% Hide TODOs
+\newtoggle{hidetodos}
+\settoggle{hidetodos}{false}
