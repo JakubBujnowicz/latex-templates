@@ -2,37 +2,110 @@
 % ============================       THEOREMS       ============================
 % ==============================================================================
 
+% Notes ------------------------------------------------------------------------
+% Every \counterwithin call must be made after tcolorbox definitions
+%
+% Legend for naming:
+% d*: default environment,
+% f*: framed environment.
+
+
+% Settings ---------------------------------------------------------------------
+% Counters
+\newcounter{definitioncounter}
+\newcounter{examplecounter}
+\newcounter{theoremcounter}
+\newcounter{lemmacounter}
+\newcounter{remarkcounter}
+
+% Use library from tcolorbox package
+\tcbuselibrary{theorems}
+
+
 % Bolded title -----------------------------------------------------------------
 \theoremstyle{definition}
 
 % Definition
-\newtheorem{definition}{\definitionname}[section]
-\newtheorem{bdefinition}{\definitionname}[section]
+\newtheorem{ddefinition}[definitioncounter]{\definitionname}
+\newtcbtheorem[number within=section,
+			   use counter=definitioncounter]
+	{fdefinition} % Environment name
+	{\definitionname} % Displayed name
+	{colback=blue!5,
+	 colframe=blue!35!black,
+	 fonttitle=\bfseries}
+	{def} % Label prefix
 
 % Example
-\newtheorem{example}{\examplename}[section]
-\newtheorem{bexample}{\examplename}[section]
+\newtheorem{dexample}[examplecounter]{\examplename}
+\newtcbtheorem[number within=section,
+			   use counter=examplecounter]
+	{fexample} % Environment name
+	{\examplename} % Displayed name
+	{colback=blue!5,
+	 colframe=blue,
+	 fonttitle=\bfseries}
+	{ex} % Label prefix
 
 
 % Bolded title, italic text ----------------------------------------------------
 \theoremstyle{plain}
 
 % Theorem
-\newtheorem{theorem}{\theoremname}[section]
-\newtheorem{btheorem}{\theoremname}[section]
+\newtheorem{dtheorem}[theoremcounter]{\theoremname}
+\newtcbtheorem[number within=section,
+			   use counter=theoremcounter]
+	{ftheorem} % Environment name
+	{\theoremname} % Displayed name
+	{colback=green!5,
+	 colframe=green!35!black,
+	 fonttitle=\bfseries,
+	 fontupper=\slshape}
+	{th} % Label prefix
 
 % Corollary
-\newtheorem{corollary}{\corollaryname}[section]
-\newtheorem{bcorollary}{\corollaryname}[section]
+\newtheorem{dcorollary}[theoremcounter]{\corollaryname}
+\newtcbtheorem[number within=section,
+			   use counter=theoremcounter]
+	{fcorollary} % Environment name
+	{\corollaryname} % Displayed name
+	{colback=green!5,
+	 colframe=green!35!black,
+	 fonttitle=\bfseries,
+	 fontupper=\slshape}
+	{cor} % Label prefix
 
 % Lemma
-\newtheorem{lemma}{\lemmaname}[section]
-\newtheorem{blemma}{\lemmaname}[section]
+\newtheorem{dlemma}[lemmacounter]{\lemmaname}
+\newtcbtheorem[number within=section,
+	           use counter=lemmacounter]
+	{flemma} % Environment name
+	{\lemmaname} % Displayed name
+	{colback=green!5,
+	 colframe=green!35!black,
+	 fonttitle=\bfseries,
+	 fontupper=\slshape}
+	{lem} % Label prefix
 
 
 % Italic title -----------------------------------------------------------------
 \theoremstyle{remark}
 
 % Remark
-\newtheorem{remark}{\remarkname}[section]
-\newtheorem{bremark}{\remarkname}[section]
+\newtheorem{dremark}[remarkcounter]{\remarkname}
+\newtcbtheorem[number within=section,
+               use counter=remarkcounter]
+    {fremark} % Environment name
+    {\remarkname} % Displayed name
+    {colback=green!5,
+     colframe=green!35!black,
+     fonttitle=\slshape}
+    {rem} % Label prefix
+
+
+% Reset counters to section ----------------------------------------------------
+\counterwithin{definitioncounter}{section}
+\counterwithin{examplecounter}{section}
+\counterwithin{theoremcounter}{section}
+\counterwithin{lemmacounter}{section}
+\counterwithin{remarkcounter}{section}
