@@ -1,0 +1,71 @@
+\usetheme{Boadilla}
+
+\setbeamercolor{structure}{fg=ecs100}
+\setbeamercolor{background canvas}{bg=}
+
+\setbeamertemplate{section in toc}[default]
+\setbeamertemplate{subsection in toc}[ball]
+\setbeamertemplate{subsubsection in toc}{$\blacktriangleright$}
+
+\setbeamertemplate{itemize items}[default]
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{navigation symbols}{}
+
+
+\setbeamertemplate{headline}
+{%
+    \vspace*{2.5ex}%
+    \begin{beamercolorbox}[wd=0.1\textwidth,ht=2ex,dp=0.5ex,leftskip=.5em,rightskip=.5em]{author in head/foot}%
+        \usebeamerfont{author in head/foot}%
+        Strona \insertframenumber%
+    \end{beamercolorbox}%
+    \vspace*{-1.75ex}%
+    \hspace*{0.07\textwidth}%
+    \begin{beamercolorbox}[wd=0.92\textwidth,ht=2ex,dp=0.5ex,left,leftskip=.5em]{title}%
+        \begin{picture}(0,0)
+            \put(0,0.5){\rule[1.8ex]{\textwidth}{0.2ex}}\end{picture}% 2ex - 0.2ex = 1.8ex
+        {\usebeamerfont{title in head/foot}%
+            \qquad \insertshorttitle \; $|$ \insertdate \; $|$ \insertshortauthor \hfill \insertsection\break}%
+    \end{beamercolorbox}%
+}
+
+\setbeamertemplate{frametitle}
+{%
+    \vspace*{3ex}%
+    %\hspace{4ex}
+    \usebeamercolor{title} \bf \large \insertframetitle%
+    %\vspace*{.5ex}
+}
+
+
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=1cm}
+\setbeamersize{text margin right=1cm}
+
+
+
+\setbeamertemplate{title page}
+{%
+    \setlength{\unitlength}{1cm}
+    \begin{picture}(0,0)
+        \put(7.2,-0.5){}
+        \put(7,-0.8){\textcolor{ecs100}{}}
+    \end{picture}
+
+
+
+    \begin{centering}
+        \vspace{1cm}
+        {\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle}\\
+        \vspace{1.2cm}
+        \insertauthor\\\insertinstitute\\
+        \vspace{0.9cm}
+        { \textcolor{ecs100}{}\\}
+        {\textcolor{ecs100}{Łódź, 06.07.2021r.
+            }\\
+
+            \vspace*{0.5cm}
+        }
+    \end{centering}
+}

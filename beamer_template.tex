@@ -1,0 +1,67 @@
+\documentclass[12pt,fleqn]{beamer}
+
+% ==============================================================================
+% ============================       PACKAGES       ============================
+% ==============================================================================
+\input{includes/packages_beamer.tex}
+\input{includes/theorems_beamer.tex}
+\input{includes/beamer_boadilla.tex}
+
+\input{includes/commands.tex}
+
+% This document specific
+%\newcommand{\procesVG}{Variance Gamma\xspace}
+%\newcommand{\familyLevy}{ \family{L_t}{t \geq 0} }
+%\newcommand{\cLevy}{ \overline{c} }
+%
+%\newcommand{\bigJumpsInt}[2][\nu]{ \Psi_{#1} \!  \left( #2 \right) }
+%\newcommand{\smallJumpsInt}[2][\nu]{ \psi_{#1} \!  \left( #2 \right) }
+
+
+% ==============================================================================
+% =========================       OTHER SETTINGS       =========================
+% ==============================================================================
+% Author
+\title[]{\bfseries Własności procesu \procesVG i jego zastosowania}
+\author{Jakub Bujnowicz}
+\newcommand{\presdatum}{06.07.2021}
+\date{19.04.2021}
+
+\institute{Instytut Matematyki PŁ}
+
+% Adding the bibliography file
+\addbibresource{bibliography/bibliography.bib}
+
+
+% ==============================================================================
+% ============================       DOCUMENT       ============================
+% ==============================================================================
+\begin{document}
+
+% Title page -------------------------------------------------------------------
+\thispagestyle{empty}
+\titlepage
+
+% Table of contents ------------------------------------------------------------
+\begin{frame}
+    \frametitle{Plan prezentacji}
+    \vspace{-1cm}
+    \tableofcontents
+\end{frame}
+
+% Sections ---------------------------------------------------------------------
+\input{sections/prezentacja_obrona.tex}
+
+
+% Bibliography (BibTex) --------------------------------------------------------
+
+\begin{frame}{Bibliografia}
+    \nocite{mikosch2009nonlife}
+    \nocite{protter2005sde}
+    \nocite{ken1999levy}
+    \nocite{brockwell2001carmalevy}
+    % \nocite{papapantoleon2008introduction}
+    \printbibliography
+\end{frame}
+
+\end{document}

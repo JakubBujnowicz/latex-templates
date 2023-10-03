@@ -1,0 +1,50 @@
+% ==============================================================================
+% ============================       PACKAGES       ============================
+% ==============================================================================
+% Encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % Fixes inequality signs and accents
+
+% Language
+\usepackage{polski}
+
+% Math symbols and environments
+\usepackage{amssymb} % Symbols
+\usepackage{amsmath} % Equations and more
+\usepackage{amsfonts} % Fonts
+\usepackage{amsthm} % Theorems
+\usepackage{mathtools} % Extension of amsmath
+\usepackage{bbm} % Bolded font for numerics
+
+% Better control of custom commands and optional arguments
+\usepackage{xargs}
+\usepackage{xspace} % Allows for using fixed text commands without {}
+
+% BiBLaTeX
+\usepackage[style=authoryear,
+            natbib=true,
+            abbreviate=false,
+            isbn=false,
+            doi=false,
+            url=false,
+            maxbibnames=100,
+            maxcitenames=2,
+            language=polish,
+            sortlocale=pl_PL,
+            backend=biber]{biblatex}
+
+% Indents according to polish typesetting standards
+% \usepackage{indentfirst}
+
+% Others
+\usepackage{enumitem} % Custom enumeration
+\setitemize{label=\usebeamerfont*{itemize item}%
+    \usebeamercolor[fg]{itemize item}
+    \usebeamertemplate{itemize item}}
+
+\usepackage{booktabs} % Prettier spacing in tables
+\usepackage{graphicx} % Extended commands for inserting figures
+% \usepackage[colorinlistoftodos]{todonotes} % Easy 'to do' notes
+% \usepackage{hyperref} % Turns references into links
+\usepackage[open]{bookmark} % Bookmarks
+\usepackage{xcolor}
