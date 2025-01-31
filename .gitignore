@@ -1,6 +1,5 @@
 ## Own rules
-*.directory
-*_template.pdf
+/*.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

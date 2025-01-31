@@ -8,9 +8,9 @@ text_block <- function(...,
                        comment_sign = NULL)
 {
     txt <- paste0(c(...), collapse = "")
-    txt <- str_wrap(txt, width = msg_width)
+    txt <- stringr::str_wrap(txt, width = msg_width)
 
-    lines <- format(str_split(txt, pattern = "\n")[[1]])
+    lines <- format(stringr::str_split_1(txt, pattern = "\n"))
 
     block_n <- block_width - 2 * blank_n - nchar(lines[1])
     div2 <- block_n %% 2 == 0
@@ -33,7 +33,6 @@ text_block <- function(...,
     result <- paste0(comment_sign,
                      c(bound, paste0(result, collapse = "\n"), bound),
                      collapse = "\n")
-    cat(result)
     return(invisible(result))
 }
 
@@ -42,23 +41,23 @@ bibfiles <- list.files("bibliography", pattern = "\\.bib$",
 fulls <- c("bibliography_full.bib", "bibliography.bib")
 bibfiles <- bibfiles[!(basename(bibfiles) %in% fulls)]
 
-codes <- str_remove(basename(bibfiles), "\\.bib$")
+codes <- stringr::str_remove(basename(bibfiles), "\\.bib$")
 names(bibfiles) <- codes
 
 entries <- lapply(bibfiles, readLines, encoding = "UTF-8")
-first_lines <- sapply(entries, function(x) x[[1]])
-types <- toupper(str_extract(first_lines, "(?<=@).*?(?=\\{)"))
+first_lines <- vapply(entries, `[[`, 1, FUN.VALUE = character(1))
+types <- toupper(stringr::str_extract(first_lines, "(?<=@).*?(?=\\{)"))
 
 entries_tp <- split(entries, types)
 
-result <- c()
+result <- NULL
 for (tp in seq_along(entries_tp)) {
     curr <- entries_tp[[tp]]
     block <- text_block(names(entries_tp)[tp],
                         block_width = 78,
                         comment_sign = "% ",
                         block_sign = "=")
-    block <- unlist(strsplit(block, "\n"))
+    block <- unlist(strsplit(block, "\n", fixed = TRUE))
     result <- c(result, block, "")
 
     for (e in seq_along(curr)) {
@@ -69,3 +68,4 @@ for (tp in seq_along(entries_tp)) {
 }
 
 writeLines(result, "bibliography/bibliography.bib", useBytes = TRUE)
+

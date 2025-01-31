@@ -8,4 +8,7 @@ relevant <- str_subset(other, paste0(tex, collapse = "|"))
 
 remove <- str_subset(relevant, "\\.pdf$|\\.tex$", negate = TRUE)
 
-file.remove(remove)
+outcomes <- file.remove(remove)
+names(outcomes) <- remove
+print(outcomes)
+
