@@ -7,8 +7,10 @@
 \usepackage[T1]{fontenc} % Fixes inequality signs and accents
 
 % Font
-\usepackage[scaled]{helvet}
-\renewcommand*\familydefault{\sfdefault} 
+\iftoggle{usehelvetica}{
+    \usepackage[scaled]{helvet}
+    \renewcommand*\familydefault{\sfdefault}
+}{}
 
 % Language
 \input{config/languages/\usedlanguage}
@@ -49,7 +51,6 @@
 }{
 	% Removes quotes from the title
 	\DeclareFieldFormat[article, inbook]{title}{#1}
-	\DeclareFieldFormat[article, inbook]{title}{#1}	
 }
 
 % Tables
@@ -81,7 +82,8 @@
 % Adding the bibliography file
 \addbibresource{\bibfile}
 
-% Hiding todos
-\iftoggle{hidetodos}{
+% Hiding todos if necessary
+\iftoggle{showtodos}{}{
 	\presetkeys{todonotes}{disable}{}
-}{}
+}
+

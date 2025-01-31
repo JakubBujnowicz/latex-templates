@@ -22,10 +22,14 @@
 % ==============================================================================
 \begin{document}
 
+
 % Title page -------------------------------------------------------------------
 \hypersetup{pageanchor=false} % No hyperlink anchor for the title-page
-\maketitle
-% \input{sections/titlepage.tex}
+
+% Manually crafted version inserted if it exists, otherwise automatic
+\InputIfFileExists{sections/titlepage.tex}{
+    \maketitle
+}
 
 
 % Table of contents ------------------------------------------------------------
@@ -47,10 +51,11 @@
 % Sections ---------------------------------------------------------------------
 % Insert your sections and text here
 
+
 % Bibliography  ----------------------------------------------------------------
 \iftoggle{addbibliography}{
 	\clearpage
-	
+
 	\printbibliography[heading=bibintoc]
 }{}
 
