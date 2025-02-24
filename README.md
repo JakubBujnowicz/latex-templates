@@ -26,6 +26,6 @@ of constants, configuration settings, commands and environments.
 * `figures`: stores files with figures.
 * `tables`: stores `.tex` files with LaTeX tables.
 * `Rcode`: useful R code.
-* `scripts`: executable scripts, often base on files within `Rcode`.
+* `scripts`: executable scripts, often based on files within `Rcode`.
 
 
